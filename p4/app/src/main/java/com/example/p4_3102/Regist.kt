@@ -17,22 +17,22 @@ class Regist : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.regist)
 
-        val et_nama: EditText = findViewById(R.id.et_nama)
-        val et_RegUsername: EditText = findViewById(R.id.et_reg_username)
-        val et_RegEmail: EditText = findViewById(R.id.et_reg_email)
-        val et_RegPassword: EditText = findViewById(R.id.et_reg_password)
-        val et_RegConfirmPassword: EditText = findViewById(R.id.et_reg_confirm_password)
+        val et_nama: EditText = findViewById(R.id.et_user)
+        val et_RegUsername: EditText = findViewById(R.id.et_username)
+        val et_RegEmail: EditText = findViewById(R.id.et_email)
+        val et_RegPassword: EditText = findViewById(R.id.et_password)
+        val et_RegConfirmPassword: EditText = findViewById(R.id.et_confirmpassword)
         val btn_Register: Button = findViewById(R.id.btn_register)
-        val rg_jenis_kelamin: RadioGroup = findViewById(R.id.rg_jenis_kelamin)
-        val cb_syarat: CheckBox = findViewById(R.id.syarat_ketentuan)
-        val spinner_domisili: Spinner = findViewById(R.id.spinner_domisili)
+        val rg_jenis_kelamin: RadioGroup = findViewById(R.id.rg_gender)
+        val cb_syarat: CheckBox = findViewById(R.id.syaratketentuan)
+        val spinner_domisili: Spinner = findViewById(R.id.domisili)
 
         btn_Register.setOnClickListener {
             val selectedJkId = rg_jenis_kelamin.checkedRadioButtonId
 
             val jenisKelamin = when (selectedJkId) {
-                R.id.pria -> "Pria"
-                R.id.wanita -> "Wanita"
+                R.id.g_pria -> "Pria"
+                R.id.g_wanita -> "Wanita"
                 else -> "Belum dipilih"
             }
 
