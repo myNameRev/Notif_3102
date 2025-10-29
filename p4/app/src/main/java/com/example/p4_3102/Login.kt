@@ -19,7 +19,7 @@ class Login : AppCompatActivity() {
         btn_login.setOnClickListener {
             val username = et_Username.text.toString()
 
-            val pindah : Intent= Intent(this dashboard::class.java)
+            val pindah : Intent= Intent(this, Dashboard::class.java)
 
             pindah.putExtra("nama", username)
 
@@ -27,7 +27,7 @@ class Login : AppCompatActivity() {
         }
 
         btn_register.setOnClickListener {
-            val intent = Intent(this, Register::class.java)
+            val intent = Intent(this, Regist::class.java)
             startActivity(intent)
         }
     }
