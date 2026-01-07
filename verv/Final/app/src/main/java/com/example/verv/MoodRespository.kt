@@ -1,0 +1,46 @@
+package com.example.verv
+
+object MoodRepository {
+
+    // Data List Utama
+    val moodList = mutableListOf(
+        MoodNote(title = "Terbang ke Bali", emoji = "✈️", date = "16 Dec 2025", isFavorite = true),
+        MoodNote(title = "Belanja Bulanan", emoji = "🛍️", date = "16 Dec 2025", isFavorite = false),
+        MoodNote(title = "Sangat Senang", emoji = "😊", date = "10 Dec 2025", isFavorite = false)
+    )
+
+    fun getFavorites(): List<MoodNote> {
+        return moodList.filter { it.isFavorite }
+    }
+
+    // --- FUNGSI HAPUS ---
+    fun deleteMood(mood: MoodNote) {
+        moodList.remove(mood)
+    }
+
+    // --- FUNGSI EDIT/UPDATE ---
+    fun updateMood(index: Int, newMood: MoodNote) {
+        if (index >= 0 && index < moodList.size) {
+            moodList[index] = newMood
+        }
+    }
+
+    // --- FUNGSI DETEKSI EMOJI (PUSAT) ---
+    // Kita pindahkan ke sini agar bisa dipakai oleh AddMoodActivity DAN HomeFragment (saat Edit)
+    fun getEmojiFromTitle(title: String): String {
+        val lower = title.lowercase()
+        return when {
+            lower.contains("terbang") || lower.contains("travel") || lower.contains("libur") -> "✈️"
+            lower.contains("belanja") || lower.contains("beli") || lower.contains("mall") -> "🛍️"
+            lower.contains("lari") || lower.contains("run") || lower.contains("gym") -> "🏃"
+            lower.contains("makan") || lower.contains("food") || lower.contains("lapar") -> "🍔"
+            lower.contains("minum") || lower.contains("kopi") || lower.contains("cafe") -> "☕"
+            lower.contains("kerja") || lower.contains("tugas") || lower.contains("kantor") -> "💼"
+            lower.contains("tidur") || lower.contains("sleep") || lower.contains("ngantuk") -> "😴"
+            lower.contains("sedih") || lower.contains("nangis") || lower.contains("galau") -> "😭"
+            lower.contains("marah") || lower.contains("benci") -> "😡"
+            lower.contains("cinta") || lower.contains("sayang") || lower.contains("love") -> "❤️"
+            else -> "😊"
+        }
+    }
+}

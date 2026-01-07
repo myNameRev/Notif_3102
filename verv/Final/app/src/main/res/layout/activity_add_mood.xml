@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/header_poni"
+        layout="@layout/layout_poni_header" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How are you feeling today?"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/verve_purple"
+            android:layout_marginBottom="24dp"/>
+
+        <EditText
+            android:id="@+id/et_note_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mood Title (e.g. Happy, Tired)"
+            android:padding="16dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="16dp"
+            android:inputType="textCapSentences"/>
+
+        <EditText
+            android:id="@+id/et_note_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:hint="Write your story here..."
+            android:gravity="top|start"
+            android:padding="16dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="24dp"
+            android:inputType="textMultiLine"/>
+
+        <Button
+            android:id="@+id/btn_save_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Mood"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/verve_purple"
+            android:padding="12dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
